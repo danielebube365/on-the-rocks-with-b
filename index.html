@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>On The Rocks With B · Gourmet Cocktails & Mobile Bar · Lagos</title>
 <meta name="description" content="On The Rocks With B is a purpose-driven mobile cocktail bar in Lagos. Gourmet cocktails, open bar, custom menus and to-go drinks for weddings, parties and events. Book on WhatsApp.">
-<meta name="theme-color" content="#141010">
+<meta name="theme-color" content="#100C0B">
 <meta property="og:title" content="On The Rocks With B · Gourmet Cocktails & Mobile Bar, Lagos">
 <meta property="og:description" content="Gourmet cocktails and a full mobile bar for your event. We mix with meaning. Book on WhatsApp.">
 <meta property="og:image" content="assets/cocktail2.jpg">
@@ -42,16 +42,20 @@
 
 <!-- hero -->
 <section class="hero">
-  <div class="hero__media"><video src="assets/hero.mp4" poster="assets/hero-poster.jpg" muted loop playsinline preload="metadata" aria-hidden="true"></video></div>
+  <div class="hero__media" data-par="0.28"><video src="assets/hero.mp4" poster="assets/hero-poster.jpg" muted loop playsinline preload="metadata" aria-hidden="true"></video></div>
   <div class="hero__scrim" aria-hidden="true"></div>
   <div class="hero__in">
     <div class="hero__kicker reveal"><span class="rule"></span><span class="label">Mobile Cocktail Bar &middot; Lagos</span></div>
-    <h1 class="hero__title reveal" style="--d:.1s">Cocktails, made <em>with meaning.</em></h1>
-    <div class="hero__row reveal" style="--d:.24s">
+    <h1 class="hero__title reveal" style="--d:.12s">Cocktails, made <em>with meaning.</em></h1>
+    <div class="hero__row reveal" style="--d:.26s">
       <p class="hero__sub">A full gourmet bar, brought to your wedding, party or event, and drinks your guests won't stop talking about.</p>
-      <a href="https://wa.link/wltzu2" target="_blank" rel="noopener" class="link">Book your event <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
+      <div class="hero__cta">
+        <a href="https://wa.link/wltzu2" target="_blank" rel="noopener" class="btn"><span>Book your event</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
+        <a href="#cocktails" class="link link--dim">See the pours</a>
+      </div>
     </div>
   </div>
+  <div class="hero__scroll" id="heroScroll" aria-hidden="true"><span class="bar"></span><span>Scroll</span></div>
 </section>
 
 <!-- word band -->
@@ -63,78 +67,106 @@
 </div>
 
 <!-- cocktails -->
-<section id="cocktails" style="padding-top:clamp(5rem,11vw,9rem);">
-  <div class="section" style="padding-bottom:clamp(2.5rem,5vw,3.5rem);">
-    <div class="shead reveal" style="margin-bottom:0;">
+<section id="cocktails" class="tone-soft">
+  <div class="section" style="padding-bottom:clamp(3rem,5vw,4rem);">
+    <div class="shead reveal" style="margin-bottom:clamp(3rem,6vw,5rem);">
       <div class="shead__l"><span class="idx">01</span><h2>The pours.</h2></div>
-      <p>Every drink, mixed to order and made to be remembered. Slide to explore.</p>
+      <p>Every drink, mixed to order and made to be remembered.</p>
+    </div>
+
+    <!-- featured cocktail -->
+    <div class="feature">
+      <div class="feature__media reveal-img">
+        <span class="feature__tag">Signature</span>
+        <div class="ir"><img src="assets/cocktail2.jpg" alt="The Rosé, a rose-topped signature cocktail" loading="lazy"></div>
+      </div>
+      <div class="feature__copy reveal" style="--d:.1s">
+        <span class="label">The house signature</span>
+        <h3 class="feature__name">The <em>Rosé.</em></h3>
+        <p class="feature__desc">Delicate, floral and quietly confident. Built to order, finished with a fresh bloom, and poured the moment it reaches your glass. A first impression that lingers all evening.</p>
+        <a href="https://wa.link/wltzu2" target="_blank" rel="noopener" class="link">Design your menu <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
+      </div>
     </div>
   </div>
+
+  <div class="rail-h reveal"><span class="label">The Collection</span><span class="label">Slide to explore &rarr;</span></div>
   <div class="rail reveal">
-    <figure><img src="assets/cocktail2.jpg" alt="A rose-topped cocktail" loading="lazy"><figcaption>The Rosé</figcaption></figure>
-    <figure><img src="assets/cocktail3.jpg" alt="A lilac cocktail in a coupe" loading="lazy"><figcaption>Violet Hour</figcaption></figure>
-    <figure><img src="assets/cocktail1.jpg" alt="A creamy cocktail with berries" loading="lazy"><figcaption>Berry Silk</figcaption></figure>
-    <figure><img src="assets/cocktail5.jpg" alt="A green cocktail with an edible flower" loading="lazy"><figcaption>The Ione</figcaption></figure>
-    <figure><img src="assets/cocktail4.jpg" alt="A frosted pink cocktail" loading="lazy"><figcaption>Blush</figcaption></figure>
-    <figure><img src="assets/garnish.jpg" alt="A cocktail garnish of berries and flower" loading="lazy"><figcaption>The Details</figcaption></figure>
-    <figure><img src="assets/togo1.jpg" alt="On The Rocks With B to-go pouches" loading="lazy"><figcaption>To-Go</figcaption></figure>
-    <figure><img src="assets/togo2.jpg" alt="On The Rocks With B to-go cups" loading="lazy"><figcaption>On The Move</figcaption></figure>
+    <figure><div class="ir"><img src="assets/cocktail3.jpg" alt="A lilac cocktail in a coupe" loading="lazy"></div><figcaption>Violet Hour</figcaption></figure>
+    <figure><div class="ir"><img src="assets/cocktail1.jpg" alt="A creamy cocktail with berries" loading="lazy"></div><figcaption>Berry Silk</figcaption></figure>
+    <figure><div class="ir"><img src="assets/cocktail5.jpg" alt="A green cocktail with an edible flower" loading="lazy"></div><figcaption>The Ione</figcaption></figure>
+    <figure><div class="ir"><img src="assets/cocktail4.jpg" alt="A frosted pink cocktail" loading="lazy"></div><figcaption>Blush</figcaption></figure>
+    <figure><div class="ir"><img src="assets/garnish.jpg" alt="A cocktail garnish of berries and flower" loading="lazy"></div><figcaption>The Details</figcaption></figure>
+    <figure><div class="ir"><img src="assets/togo1.jpg" alt="On The Rocks With B to-go pouches" loading="lazy"></div><figcaption>To-Go</figcaption></figure>
   </div>
 </section>
 
-<!-- services (real photo cards) -->
-<section class="section" id="services">
+<div class="seam"></div>
+
+<!-- services (magazine cards) -->
+<section class="section tone-espresso" id="services">
   <div class="shead reveal">
     <div class="shead__l"><span class="idx">02</span><h2>The whole bar,<br><em>brought to you.</em></h2></div>
     <p>Fully loaded. Bartenders, tools, drinkware, garnishes, the works.</p>
   </div>
   <div class="serv">
-    <a class="scard reveal" href="https://wa.link/wltzu2" target="_blank" rel="noopener">
+    <a class="scard scard--feature reveal" href="https://wa.link/wltzu2" target="_blank" rel="noopener">
       <img src="assets/event1.jpg" alt="A styled event bar set by On The Rocks With B" loading="lazy">
       <div class="scard__v"></div>
       <div class="scard__in"><span class="scard__idx">i</span><div class="scard__b"><h3>Mobile Bar</h3><p>Professional bartenders and a full setup, brought to your venue.</p></div></div>
     </a>
-    <a class="scard reveal" style="--d:.08s" href="https://wa.link/wltzu2" target="_blank" rel="noopener">
+    <a class="scard scard--wide reveal" style="--d:.08s" href="https://wa.link/wltzu2" target="_blank" rel="noopener">
       <img src="assets/cocktail2.jpg" alt="A gourmet cocktail" loading="lazy">
       <div class="scard__v"></div>
       <div class="scard__in"><span class="scard__idx">ii</span><div class="scard__b"><h3>Open Bar</h3><p>Unlimited drinks, good vibes and no tabs, start to finish.</p></div></div>
     </a>
-    <a class="scard reveal" style="--d:.16s" href="https://paystack.shop/on-the-rocks-with-b" target="_blank" rel="noopener">
+    <a class="scard scard--a reveal" style="--d:.16s" href="https://paystack.shop/on-the-rocks-with-b" target="_blank" rel="noopener">
       <img src="assets/togo1.jpg" alt="On The Rocks With B to-go pouches" loading="lazy">
       <div class="scard__v"></div>
-      <div class="scard__in"><span class="scard__idx">iii</span><div class="scard__b"><h3>To-Go Drinks</h3><p>Pre-mixed and beautifully packaged in pouches, jars or cups.</p></div></div>
+      <div class="scard__in"><span class="scard__idx">iii</span><div class="scard__b"><h3>To-Go Drinks</h3><p>Pre-mixed, beautifully packaged in pouches, jars or cups.</p></div></div>
     </a>
-    <a class="scard reveal" style="--d:.24s" href="https://wa.link/wltzu2" target="_blank" rel="noopener">
+    <a class="scard scard--b reveal" style="--d:.24s" href="https://wa.link/wltzu2" target="_blank" rel="noopener">
       <img src="assets/cocktail5.jpg" alt="A signature cocktail with an edible flower" loading="lazy">
       <div class="scard__v"></div>
-      <div class="scard__in"><span class="scard__idx">iv</span><div class="scard__b"><h3>Custom Menus</h3><p>Cocktails and mocktails curated for your theme and your guests.</p></div></div>
+      <div class="scard__in"><span class="scard__idx">iv</span><div class="scard__b"><h3>Custom Menus</h3><p>Cocktails and mocktails curated for your theme.</p></div></div>
     </a>
   </div>
 </section>
 
+<div class="seam"></div>
+
 <!-- events -->
-<section class="section events" id="events">
+<section class="section events tone-charcoal" id="events">
   <div class="events__grid">
-    <div class="events__media reveal"><video src="assets/events.mp4" poster="assets/events-poster.jpg" muted loop playsinline preload="none" aria-hidden="true"></video></div>
-    <div class="events__copy reveal" style="--d:.1s">
+    <div class="events__copy reveal">
       <div class="shead__l" style="margin-bottom:0;"><span class="idx">03</span><span class="label">Weddings &amp; Events</span></div>
       <h2>The night everyone<br><em>remembers.</em></h2>
       <p>From intimate gatherings to full weddings and corporate evenings, we set up the bar and set the mood. Share your date and guest count, and we'll craft a quote made for your moment.</p>
-      <a href="https://wa.link/wltzu2" target="_blank" rel="noopener" class="btnline">Book your event</a>
+      <a href="https://wa.link/wltzu2" target="_blank" rel="noopener" class="btn"><span>Book your event</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
     </div>
+    <div class="events__media reveal-img" style="--d:.1s"><video src="assets/events.mp4" poster="assets/events-poster.jpg" muted loop playsinline preload="none" aria-hidden="true"></video></div>
   </div>
 </section>
 
 <!-- story -->
-<section class="section story" id="story">
-  <span class="label reveal">Beyond the Bar</span>
-  <p class="story__q reveal" style="--d:.1s">Every pour has purpose. <em>We mix with meaning.</em></p>
-  <p class="story__body reveal" style="--d:.18s">On The Rocks With B began during a career pause and grew into a purpose-driven brand rooted in experience and heart. We've always been about more than cocktails. Where we're from, staying in school isn't always easy, so we make room for young people who need a flexible way to work, earn, and still focus on their education.</p>
-  <p class="story__sign reveal" style="--d:.26s">Hello, I'm B. So glad you found us.</p>
+<section class="section story tone-espresso" id="story">
+  <div class="story__inner">
+    <span class="label reveal">Beyond the Bar</span>
+    <p class="story__q reveal" style="--d:.08s">Every pour has purpose. <em>We mix with meaning.</em></p>
+    <div class="story__lines">
+      <p class="reveal" style="--d:.12s">On The Rocks With B began during a career pause.</p>
+      <div class="story__dot reveal" style="--d:.16s"></div>
+      <p class="dim reveal" style="--d:.2s">It grew into a purpose-driven brand, rooted in experience and heart.</p>
+      <div class="story__dot reveal" style="--d:.24s"></div>
+      <p class="dim reveal" style="--d:.28s">Where we're from, staying in school isn't always easy. So we make room for young people who need a flexible way to work, earn, and still focus on their education.</p>
+    </div>
+    <p class="story__sign reveal" style="--d:.34s">Hello, I'm B. So glad you found us.</p>
+  </div>
 </section>
 
+<div class="seam"></div>
+
 <!-- faq -->
-<section class="section" id="faq">
+<section class="section tone-soft" id="faq">
   <div class="shead reveal">
     <div class="shead__l"><span class="idx">04</span><h2>Good to know.</h2></div>
     <p>Everything you'd ask before booking.</p>
@@ -144,21 +176,22 @@
     <div class="faq__item"><button class="faq__q">How far in advance should I book? <span class="pl">+</span></button><div class="faq__a"><p>We recommend booking 1 to 2 weeks ahead, especially during busy seasons. That said, last-minute and even same-day bookings can be accommodated depending on availability.</p></div></div>
     <div class="faq__item"><button class="faq__q">Do you offer non-alcoholic options? <span class="pl">+</span></button><div class="faq__a"><p>Yes, always. From playful mocktails to refreshing mixers, we've got something delicious for everyone. No one is left out at our bar.</p></div></div>
     <div class="faq__item"><button class="faq__q">What is an Open Bar? <span class="pl">+</span></button><div class="faq__a"><p>Unlimited drinks, good vibes and no tabs. Your guests sip freely throughout the event while we keep things stocked and shaking from beginning to the very end.</p></div></div>
-    <div class="faq__item"><button class="faq__q">Can I get a custom cocktail menu? <span class="pl">+</span></button><div class="faq__a"><p>Absolutely. We love curating cocktail and mocktail menus that fit your event's theme, vibe and guest preferences. Together we'll create drinks your guests won't stop talking about.</p></div></div>
     <div class="faq__item"><button class="faq__q">What's included in the mobile bar service? <span class="pl">+</span></button><div class="faq__a"><p>We come fully loaded. Your booking includes professional bartenders, bar tools, drinkware, garnishes and everything needed to keep the drinks flowing smoothly all event long.</p></div></div>
-    <div class="faq__item"><button class="faq__q">What are to-go beverages? <span class="pl">+</span></button><div class="faq__a"><p>Our to-go drinks are pre-mixed and beautifully packaged for sipping on the move. Perfect for parties or just keeping your fridge stocked. Available in pouches, jars or sealed cups.</p></div></div>
-    <div class="faq__item"><button class="faq__q">Is a deposit required? <span class="pl">+</span></button><div class="faq__a"><p>Yes, a 50% deposit secures your spot on our event log. The remaining balance is due before the event, as full payment is required prior to service.</p></div></div>
-    <div class="faq__item"><button class="faq__q">Can I make changes after confirming? <span class="pl">+</span></button><div class="faq__a"><p>Definitely. You can tweak your booking up to 48 hours before your event. We'll do our best to accommodate last-minute changes, though big adjustments may affect pricing.</p></div></div>
-    <div class="faq__item"><button class="faq__q">Where do you operate? <span class="pl">+</span></button><div class="faq__a"><p>We currently serve events within Lagos, Nigeria.</p></div></div>
+    <div class="faq__item faq__item--more"><button class="faq__q">Can I get a custom cocktail menu? <span class="pl">+</span></button><div class="faq__a"><p>Absolutely. We love curating cocktail and mocktail menus that fit your event's theme, vibe and guest preferences. Together we'll create drinks your guests won't stop talking about.</p></div></div>
+    <div class="faq__item faq__item--more"><button class="faq__q">What are to-go beverages? <span class="pl">+</span></button><div class="faq__a"><p>Our to-go drinks are pre-mixed and beautifully packaged for sipping on the move. Perfect for parties or just keeping your fridge stocked. Available in pouches, jars or sealed cups.</p></div></div>
+    <div class="faq__item faq__item--more"><button class="faq__q">Is a deposit required? <span class="pl">+</span></button><div class="faq__a"><p>Yes, a 50% deposit secures your spot on our event log. The remaining balance is due before the event, as full payment is required prior to service.</p></div></div>
+    <div class="faq__item faq__item--more"><button class="faq__q">Can I make changes after confirming? <span class="pl">+</span></button><div class="faq__a"><p>Definitely. You can tweak your booking up to 48 hours before your event. We'll do our best to accommodate last-minute changes, though big adjustments may affect pricing.</p></div></div>
+    <div class="faq__item faq__item--more"><button class="faq__q">Where do you operate? <span class="pl">+</span></button><div class="faq__a"><p>We currently serve events within Lagos, Nigeria.</p></div></div>
   </div>
+  <div class="faq__more reveal"><button class="faq__toggle" id="faqToggle" aria-expanded="false">View all questions</button></div>
 </section>
 
 <!-- book -->
-<section class="book" id="book">
+<section class="book tone-rich" id="book">
   <span class="label reveal">Reservations</span>
   <h2 class="reveal" style="--d:.1s">Let's make your night <em>unforgettable.</em></h2>
   <div class="book__cta reveal" style="--d:.2s">
-    <a href="https://wa.link/wltzu2" target="_blank" rel="noopener" class="btnline">Book on WhatsApp</a>
+    <a href="https://wa.link/wltzu2" target="_blank" rel="noopener" class="btn"><span>Book on WhatsApp</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
     <a href="https://paystack.shop/on-the-rocks-with-b" target="_blank" rel="noopener" class="link link--dim">Order to-go drinks <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
   </div>
   <p class="book__note">Serving events across Lagos, Nigeria &middot; Call or WhatsApp +234 811 436 2053</p>
@@ -166,16 +199,39 @@
 
 <footer class="footer">
   <div class="footer__in">
-    <a href="#top" class="footer__brand">On The Rocks With B</a>
-    <nav class="footer__nav" aria-label="Footer">
+    <div class="footer__brandcol">
+      <a href="#top" class="footer__brand">On The Rocks With B</a>
+      <p class="footer__tag">Every pour has purpose.<br>We mix with meaning.</p>
+      <p class="footer__loc">Lagos, Nigeria<br>By appointment &amp; event booking</p>
+    </div>
+    <div class="footer__col">
+      <h4>Explore</h4>
       <a href="#cocktails">Cocktails</a>
       <a href="#services">What We Do</a>
       <a href="#events">Events</a>
+      <a href="#story">Story</a>
       <a href="#faq">FAQ</a>
-      <a href="https://wa.link/wltzu2" target="_blank" rel="noopener">Book</a>
-    </nav>
+    </div>
+    <div class="footer__col">
+      <h4>Services</h4>
+      <a href="https://wa.link/wltzu2" target="_blank" rel="noopener">Mobile Bar</a>
+      <a href="https://wa.link/wltzu2" target="_blank" rel="noopener">Open Bar</a>
+      <a href="https://paystack.shop/on-the-rocks-with-b" target="_blank" rel="noopener">To-Go Drinks</a>
+      <a href="https://wa.link/wltzu2" target="_blank" rel="noopener">Custom Menus</a>
+    </div>
+    <div class="footer__col">
+      <h4>Connect</h4>
+      <a href="https://wa.link/wltzu2" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://www.instagram.com/ontherockswith_b" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://paystack.shop/on-the-rocks-with-b" target="_blank" rel="noopener">Order To-Go</a>
+      <a href="tel:+2348114362053">+234 811 436 2053</a>
+    </div>
   </div>
-  <p class="footer__base">&copy; <span id="year"></span> On The Rocks With B &middot; Lagos, Nigeria &middot; Every pour has purpose</p>
+  <div class="footer__base">
+    <span>&copy; <span id="year"></span> On The Rocks With B</span>
+    <span>Lagos, Nigeria</span>
+    <span>Every pour has purpose</span>
+  </div>
 </footer>
 
 <script src="script.js"></script>

@@ -6,9 +6,13 @@
 
   const y = $('#year'); if (y) y.textContent = new Date().getFullYear();
 
-  /* nav solid on scroll */
+  /* nav solid on scroll + hide scroll cue */
   const nav = $('#nav');
-  const onScroll = () => nav.classList.toggle('is-solid', window.scrollY > 40);
+  const heroScroll = $('#heroScroll');
+  const onScroll = () => {
+    nav.classList.toggle('is-solid', window.scrollY > 40);
+    if (heroScroll) heroScroll.style.opacity = window.scrollY > 120 ? '0' : '1';
+  };
   document.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
@@ -33,8 +37,20 @@
     });
   });
 
-  /* reveal */
-  const reveals = new Set($$('.reveal'));
+  /* faq show-more */
+  const faqToggle = $('#faqToggle');
+  if (faqToggle) {
+    const extras = $$('.faq__item--more');
+    faqToggle.addEventListener('click', () => {
+      const open = faqToggle.getAttribute('aria-expanded') === 'true';
+      extras.forEach((el) => el.classList.toggle('show', !open));
+      faqToggle.setAttribute('aria-expanded', String(!open));
+      faqToggle.textContent = open ? 'View all questions' : 'Show fewer questions';
+    });
+  }
+
+  /* reveals: translateY + clip-path image reveals */
+  const reveals = new Set($$('.reveal, .reveal-img'));
   const show = (el) => { el.classList.add('in'); reveals.delete(el); };
   if (reduced) { reveals.forEach(show); }
   else {
@@ -46,6 +62,19 @@
       const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { show(e.target); io.unobserve(e.target); } }), { threshold: 0.08 });
       reveals.forEach((el) => io.observe(el));
     }
+  }
+
+  /* subtle parallax (hero media, and any [data-par]) */
+  const parEls = $$('[data-par]').map((el) => ({ el, k: parseFloat(el.dataset.par) || 0.2 }));
+  if (!reduced && parEls.length) {
+    let ticking = false;
+    const frame = () => {
+      const sy = window.scrollY;
+      parEls.forEach(({ el, k }) => { el.style.transform = `translate3d(0, ${sy * k}px, 0)`; });
+      ticking = false;
+    };
+    addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }, { passive: true });
+    frame();
   }
 
   /* videos: play only what's on screen (hero + events), saves CPU */
