@@ -6,13 +6,9 @@
 
   const y = $('#year'); if (y) y.textContent = new Date().getFullYear();
 
-  /* nav solid on scroll + hide scroll cue */
+  /* nav solid on scroll */
   const nav = $('#nav');
-  const heroScroll = $('#heroScroll');
-  const onScroll = () => {
-    nav.classList.toggle('is-solid', window.scrollY > 40);
-    if (heroScroll) heroScroll.style.opacity = window.scrollY > 120 ? '0' : '1';
-  };
+  const onScroll = () => nav.classList.toggle('is-solid', window.scrollY > 40);
   document.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
@@ -49,12 +45,12 @@
     });
   }
 
-  /* reveals: translateY + clip-path image reveals */
-  const reveals = new Set($$('.reveal, .reveal-img'));
+  /* staggered reveals */
+  const reveals = new Set($$('.reveal'));
   const show = (el) => { el.classList.add('in'); reveals.delete(el); };
   if (reduced) { reveals.forEach(show); }
   else {
-    const check = () => { const vh = innerHeight; reveals.forEach((el) => { if (el.getBoundingClientRect().top < vh * 0.9) show(el); }); };
+    const check = () => { const vh = innerHeight; reveals.forEach((el) => { if (el.getBoundingClientRect().top < vh * 0.92) show(el); }); };
     requestAnimationFrame(check);
     addEventListener('scroll', check, { passive: true });
     addEventListener('resize', check);
@@ -64,34 +60,28 @@
     }
   }
 
-  /* subtle parallax (hero media, and any [data-par]) */
-  const parEls = $$('[data-par]').map((el) => ({ el, k: parseFloat(el.dataset.par) || 0.2 }));
-  if (!reduced && parEls.length) {
-    let ticking = false;
-    const frame = () => {
-      const sy = window.scrollY;
-      parEls.forEach(({ el, k }) => { el.style.transform = `translate3d(0, ${sy * k}px, 0)`; });
-      ticking = false;
-    };
-    addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }, { passive: true });
-    frame();
-  }
-
-  /* videos: play only what's on screen (hero + events), saves CPU */
+  /* videos: lazy-load (data-src) + play only what's on screen.
+     Scroll-based so it works everywhere. */
   const vids = $$('video');
   vids.forEach((v) => { v.muted = true; v.setAttribute('muted', ''); });
-  const kick = (v) => { v.play().catch(() => {}); };
+  const loadSrc = (v) => { if (v.dataset.src) { v.src = v.dataset.src; delete v.dataset.src; v.load(); } };
+
   if (reduced) {
     vids.forEach((v) => v.removeAttribute('autoplay'));
-  } else if ('IntersectionObserver' in window) {
-    const vio = new IntersectionObserver((es) => es.forEach((e) => {
-      if (e.isIntersecting) kick(e.target); else e.target.pause();
-    }), { rootMargin: '120px' });
-    vids.forEach((v) => vio.observe(v));
-    document.addEventListener('visibilitychange', () => {
-      if (!document.hidden) vids.forEach((v) => { const r = v.getBoundingClientRect(); if (v.paused && r.top < innerHeight && r.bottom > 0) kick(v); });
-    });
   } else {
-    vids.forEach(kick);
+    const manage = () => {
+      const vh = innerHeight;
+      vids.forEach((v) => {
+        const r = v.getBoundingClientRect();
+        if (r.top < vh + 600 && r.bottom > -600) loadSrc(v);       // preload when near
+        const onScreen = r.top < vh + 100 && r.bottom > -100;
+        if (onScreen) { if (v.paused) v.play().catch(() => {}); }
+        else if (!v.paused) v.pause();
+      });
+    };
+    addEventListener('scroll', manage, { passive: true });
+    addEventListener('resize', manage);
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) manage(); });
+    manage();
   }
 })();
